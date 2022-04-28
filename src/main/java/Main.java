@@ -6,15 +6,15 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
-        String word = "Java Academy By Global Logic";
-        countOccurences(word);
+        String input = "Java Academy By Global Logic";
+        countOccurences(input);
     }
 
-    public static void countOccurences(String word) {
+    public static void countOccurences(String input) {
 
         HashMap<String, Integer> occurence = new HashMap<>();
-        String[] wordIntoLetters = word.toLowerCase().split("");
-        for (int i = 0; i < word.length(); i++) {
+        String[] wordIntoLetters = input.toLowerCase().split("");
+        for (int i = 0; i < input.length(); i++) {
             if (occurence.containsKey(wordIntoLetters[i])) {
                 occurence.merge(wordIntoLetters[i], 0, (newValue, notUsed) -> {
                     return newValue + 1;
